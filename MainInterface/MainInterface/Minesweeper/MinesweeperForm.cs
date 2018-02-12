@@ -12,19 +12,21 @@ namespace MainInterface.Minesweeper
 {
     public partial class MinesweeperForm : Form
     {
-        private int width = 20;
-        private int height = 20;
-        private int mines = 50;
-        
+        private MinesweeperMap map;
 
         public MinesweeperForm()
         {
             InitializeComponent();
+            Width = map.block_width * map.width;
+            Height = map.header_height + map.block_height * map.height;
         }
 
         private void MinesweeperForm_Load(object sender, EventArgs e)
         {
-
+            map = new MinesweeperMap(this);
         }
+
+        
+
     }
 }
