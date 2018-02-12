@@ -11,11 +11,13 @@ namespace MainInterface.Minesweeper
     {
         public bool has_mine { get; set; }
         public int hidden_value { get; set; }
-        private MineBlock[,] map;
+        public int width_position { get; set; }
+        public int height_position { get; set; }
 
-        public MineBlock(MineBlock[,] map)
+        public MineBlock(int w, int h)
         {
-            this.map = map;
+            this.width_position = w;
+            this.height_position = h;
         }
 
         public bool IsEnabled()

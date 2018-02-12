@@ -38,7 +38,7 @@ namespace MainInterface.Minesweeper
                     int x = w * block_width;
                     int y = header_height + h * block_height;
 
-                    map[w, h] = new MineBlock(map);
+                    map[w, h] = new MineBlock(x, y);
                     map[w, h].Location = new Point(x, y);
                     map[w, h].Width = block_width;
                     map[w, h].Height = block_height;

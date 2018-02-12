@@ -17,13 +17,14 @@ namespace MainInterface.Minesweeper
         public MinesweeperForm()
         {
             InitializeComponent();
+            map = new MinesweeperMap(this);
             Width = map.block_width * map.width;
             Height = map.header_height + map.block_height * map.height;
         }
 
         private void MinesweeperForm_Load(object sender, EventArgs e)
         {
-            map = new MinesweeperMap(this);
+            
         }
 
         
