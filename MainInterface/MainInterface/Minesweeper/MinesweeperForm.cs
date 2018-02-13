@@ -27,6 +27,12 @@ namespace MainInterface.Minesweeper
             
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            map.Reset(this);
+        }
+
         
 
     }
