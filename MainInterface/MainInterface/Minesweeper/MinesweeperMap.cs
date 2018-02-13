@@ -80,9 +80,16 @@ namespace MainInterface.Minesweeper
             }
         }
 
-        public void Reset(Control ctrl)
+        public void Reset()
         {
-            CreateMap(ctrl);
+            for (int w = 0; w < width; w++)
+            {
+                for (int h = 0; h < height; h++)
+                {
+                    map[w, h].Reset();
+                }
+            }
+
             LoadMines();
         }
 

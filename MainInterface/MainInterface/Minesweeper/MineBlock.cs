@@ -11,7 +11,6 @@ namespace MainInterface.Minesweeper
     class MineBlock : Button
     {
         public bool has_mine { get; set; }
-        public int hidden_value { get; set; }
         public int width_position { get; set; }
         public int height_position { get; set; }
 
@@ -28,7 +27,9 @@ namespace MainInterface.Minesweeper
 
         public void HideMine()
         {
-            this.BackColor = Color.FromKnownColor(KnownColor.Control);
+            
+            this.BackColor = default(Color);
+            this.UseVisualStyleBackColor = true;
         }
 
         public void SetText(string text)
@@ -56,9 +57,9 @@ namespace MainInterface.Minesweeper
         public void Reset()
         {
             has_mine = false;
-            hidden_value = 0;
             Enabled = true;
-            Visible = true;
+            Text = "";
+            HideMine();
         }
 
         protected override void OnPaint(PaintEventArgs pe)
